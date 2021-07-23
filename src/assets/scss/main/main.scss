@@ -1,0 +1,29 @@
+@import "../colors.scss";
+
+.nav {
+  display: flex;
+  padding: 15px 6px;
+  background: $american-river;
+
+  a.logout-link {
+    color: $darkula;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 0 0 2px 0;
+    border-bottom: 3px solid #fff;
+
+    &:hover {
+      color: $breeze;
+      border-color: $breeze;
+    }
+  }
+
+  .right-nav {
+    margin-left: auto;
+  }
+}
+
+.main {
+  flex: 1;
+  padding: 0 20px;
+}

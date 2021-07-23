@@ -1,0 +1,32 @@
+@import "../colors.scss";
+
+.todo-login-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(15%);
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & input {
+      font-size: 14pt;
+      padding: 8px;
+      border-radius: 8px;
+      outline: none;
+      border: 1px solid $darkula;
+      margin: 10px 0;
+    }
+
+    & button.button-login {
+      font-size: 16pt;
+      margin: 20px 0 0;
+      width: 100%;
+    }
+  }
+  
+}
