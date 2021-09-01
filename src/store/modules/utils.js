@@ -12,7 +12,6 @@ const getters = {
 
 const actions = {
   [HTTP_ERROR]: (store, {error, router}) => {
-
     return new Promise((resolve) => {
       console.error(error)
       if (error.response) {
@@ -25,8 +24,7 @@ const actions = {
       }
       resolve()
     })
-
-  }
+  },
 }
 
 const mutations = {

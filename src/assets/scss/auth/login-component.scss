@@ -28,5 +28,23 @@
       width: 100%;
     }
   }
-  
+
+  .message {
+    cursor: pointer;
+
+    &.message-error {
+      background: $hard-red;
+      width: fit-content;
+      color: #fff;
+      padding: 15px 20px;
+      font-size: 14pt;
+      border-radius: 15px;
+      margin: 60px 0 0;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
 }
+

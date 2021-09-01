@@ -11,6 +11,8 @@
 
       <button class="button-login" type="submit">Login</button>
     </form>
+
+    <div class="message message-error hide" ref="auth-error-message" @click='hideMessage("auth-error-message")'>Incorrect login or password!</div>
     
   </div>
 </template>
@@ -27,12 +29,21 @@ export default {
     }
   },
   methods: {
-    loginMethod: function() {
+    loginMethod() {
       const {login, password} = this
       this.$store.dispatch(AUTH_LOGIN, { login, password }).then(() => {
         this.$router.push({ name: 'Main' })
+      }).catch(error => {
+        if (error.response.status == 403) {
+          this.$refs["auth-error-message"].classList.remove("hide")
+        }
       })
-    }
+    },
+
+    hideMessage(refName) {
+      let node = this.$refs[refName]
+      node.classList.add("hide")
+    },
   }
 }
 </script>
