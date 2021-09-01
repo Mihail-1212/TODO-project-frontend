@@ -6,6 +6,13 @@ import store from './store'
 import { createApp } from 'vue'
 
 
+// Получение токена
+// TODO: перенести token в конфиг
+const token = localStorage.getItem('token')
+if (token) {
+    axios.defaults.headers.common['Authorization'] = token
+}
+
 // Установка заголовков для axios
 const headers = {
   "accept": "application/json",

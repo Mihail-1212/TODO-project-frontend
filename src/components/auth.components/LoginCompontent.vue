@@ -4,20 +4,36 @@
   </h1>
 
   <div class="todo-login-container">
-    <form class="login-form" action="" method="post">
+    <form class="login-form" @submit.prevent="loginMethod">
 
-      <input type="text" name="login" placeholder="Login"/>
-      <input type="password" name="password" placeholder="Password"/>
+      <input type="text" v-model="login" placeholder="Login"/>
+      <input type="password" v-model="password" placeholder="Password"/>
 
-      <button class="button-login">Login</button>
+      <button class="button-login" type="submit">Login</button>
     </form>
     
   </div>
 </template>
 
 <script>
+import { AUTH_LOGIN } from '@/store/actions/auth'
+
 export default {
-  name: 'LoginCompontent'
+  name: 'LoginCompontent',
+  data() {
+    return {
+      login: "",
+      password: "",
+    }
+  },
+  methods: {
+    loginMethod: function() {
+      const {login, password} = this
+      this.$store.dispatch(AUTH_LOGIN, { login, password }).then(() => {
+        this.$router.push({ name: 'Main' })
+      })
+    }
+  }
 }
 </script>
 

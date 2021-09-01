@@ -58,16 +58,24 @@ button {
         }
       }
 
-      &>i.delete-button {
+      &>i.todo-button {
         cursor: pointer;
         border-radius: 10px;
         border: 1px solid transparent;
         padding: 10px;
         position: absolute;
-        right: 15px;
+        
         top: 50%;
         transform: translateY(-50%);
         transition: 300ms;
+
+        &.update-button {
+          right: 65px;
+        }
+
+        &.delete-button {
+          right: 15px;
+        }
 
         &:hover {
           border-color: $darkula;
@@ -82,4 +90,28 @@ button {
 
     }
   }
+
+  .popup-component {
+
+    .form-body {
+      &>div {
+        display: flex;
+        margin: 6px 0;
+      
+        &>label {
+          width: 200px;
+          text-align: right;
+          align-self: flex-end;
+        }
+        &>input {
+          width: 100%;
+          margin-left: 5px;
+        }
+      }
+    }
+    
+  }
 }
+
+
+
